@@ -1,0 +1,26 @@
+﻿@model IEnumerable<記帳本.Models.Money>
+    <table class="table">
+        <tr>
+            <th>#</th>
+            <th>類別</th>
+            <th>日期</th>
+            <th>金額</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @(item.SeqNum)
+                </td>
+                <td>
+                   @( item.Category)
+                </td>
+                <td>
+                    @string.Format("{0:yyyy-M-d}", item.Date)
+                </td>
+                <td>
+                    @String.Format("{0:0,0}", item.count)
+                </td>
+            </tr>
+        }
+    </table>
